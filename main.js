@@ -18,6 +18,8 @@ const setLocalStorage = (dbClient) => localStorage.setItem("db_client", JSON.str
 
 /// CRUD - Create Read Update Delete
 
+/// CRUD - READ 
+const readClient = () => getLocalStorage(); 
 
 /// CRUD - CREATE
 const createClient = (client) => {
