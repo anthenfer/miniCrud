@@ -7,16 +7,23 @@ const closeModal = () => document.getElementById('modal')
     .classList.remove('active')
 
 const tempClient = {
-    nome: "Rafael",
-    email: "rafael@email.com",
-    celular: "19985649874",
-    cidade: "Hortolândia"
+    nome: "Leonardo",
+    email: "leonardo@email.com",
+    celular: "19932652498",
+    cidade: "Itú"
 }
 
 const getLocalStorage = () => JSON.parse(localStorage.getItem('db_client')) ?? [];
 const setLocalStorage = (dbClient) => localStorage.setItem("db_client", JSON.stringify(dbClient));
 
-/// CRUD - Create Read Update Delete
+/// CRUD - Create - Read - Update - Delete
+
+/// CRUD - UPDATE
+const updateCliente = (index, client) => {
+    const dbClient = readClient()
+    dbClient[index] = client
+    setLocalStorage(dbClient)    
+}   
 
 /// CRUD - READ 
 const readClient = () => getLocalStorage(); 
